@@ -32,6 +32,7 @@ class VetorOrdenado:
     def pesquisa(self, valor):
         for i in range(self.__ultimo + 1):
             if valor == self.__valores[i]:
+                print(f"{i}")
                 return i
             else:
                 print('não encontrado')
@@ -39,8 +40,16 @@ class VetorOrdenado:
     def imprime_array(self):
         print(self.__valores[:self.__ultimo + 1])
 
-v = VetorOrdenado(6, [99, 2, 1, 0, 4, 0])    
-
+v = VetorOrdenado(6)    
+v.insere(99)
+v.insere(2)
+v.insere(1)
+v.insere(0)
+v.insere(0)
+v.insere(0)
+v.insere(4)
+v.insere(4)
+v.insere(1)
 v.imprime_array()
-v.pesquisa(7)
+v.pesquisa(2)
 v.imprime()
