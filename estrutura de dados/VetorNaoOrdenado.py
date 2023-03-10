@@ -1,5 +1,3 @@
-# array tem capacidade de conter apenas elementos homogeneos
-# usando a classe array do python
 import numpy as np
 
 class VetorNaoOrdenado: 
@@ -22,12 +20,12 @@ class VetorNaoOrdenado:
     self.__ultimo += 1
     self.__valores[self.__ultimo] = valor
 
-def pesquisa(self,valor): 
+ def pesquisa(self,valor): 
   for i in range(self.__ultimo):
     if valor == self.__valores[i]:
       return i
 
-def exclude(self,valor):
+ def exclude(self,valor):
   # posicao = self.pesquisa(valor)
   # if posicao == -1:
     # return -1
@@ -51,7 +49,6 @@ v.insere(1)
 v.insere(0)
 v.insere(5)
 v.insere(10)
-v.imprime()
 v.pesquisa(7)
 v.imprime()
-v.exclude()
+# v.exclude()
