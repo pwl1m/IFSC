@@ -35,7 +35,7 @@ class VetorOrdenado:
                 return i
             else:
                 print('não encontrado')
-
+# asdasd
     def imprime_array(self):
         print(self.__valores[:self.__ultimo + 1])
 
