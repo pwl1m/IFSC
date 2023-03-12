@@ -8,13 +8,13 @@
   </head>
 
   <body>
-  <h1>Toma Tua Merenda</h1>
-  <h2>Cadastro de Curriculo</h2>
+  <h1>Toma Tua Merenda</h1> <br>
+  <h2>Cadastro de Currículo</h2><br>
   <h3>Dados pessoais e contato</h3>
   <p>Colocar seu nome Completo e Contato de Telefone</p>
     <form>
       <label for="Nome">Nome Completo</label>
-      <textarea id="texto" name="texto" rows="1" cols="100"></textarea>
+      <textarea id="texto" name="texto" rows="1" cols="80"></textarea>
       <label for="CPF">CPF</label>
       <input type=text id="CPF" name="CPF=">
       <small>Formato: xxx.xxx.xxx-xx</xxx-xxx-xxx-xx></small>
@@ -22,12 +22,12 @@
       <input type=tel id="phone" name="phone"pattern=""required>
       <small>Formato: 0xx-9xxxx-xxxx</small>
     </form>
-
+<br>
   <h3>Conhecimento e Experiencias</h3>
   <p>Aproveite esse espaço para falar sobre você</p>
     <form>
       <label for="Conhecimento">Conhecimentos</label>
-      <textarea id="texto" name="texto" rows="20" cols="100">
+      <textarea id="texto" name="texto" rows="15" cols="80">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur temporibus enim,
         eaque ullam autem perferendis eligendi doloribus commodi recusandae
         laboriosam facilis animi voluptate numquam expedita unde inventore eveniet aut
@@ -35,21 +35,21 @@
         </textarea>
         
       <label for="Exp">Experiencias</label>
-      <textarea id="texto" name="texto" rows="20" cols="100">
+      <textarea id="texto" name="texto" rows="15" cols="80">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur temporibus enim,
         eaque ullam autem perferendis eligendi doloribus commodi recusandae
         laboriosam facilis animi voluptate numquam expedita unde inventore eveniet aut
         dolorum!
       </textarea>
     </form>
-
+    <br>
   <h3>Curriculo</h3>
     <form action="/action_page.php" enctype="multipart/form-data">
-      <label for="cv">Selecione seu Curriculo: </label>
+      <label for="cv">Seu melhor Currículo </label>
       <input type="file" id="cv" name="cv" accept="all/*">
       <input type="submit">
      </form>
-
+     <br>
   <h3>Sua Area de Interesse</h3>
   <div>
     <input type="checkbox" id="scales" name="scales" checked>
@@ -71,11 +71,13 @@
     <input type="checkbox" id="horns" name="horns" value="horns">
     <label for="Art">Art</label>
   </div>
+
   <h3>Pretensão Salarial</h3>
   <p>Sem medo de ser feliz!</p>
     <form>
       <input type=text id="text" name="text">
     </form>
-  
-  </body>
+<br><br><br>
+    <button type="submit"><strong>VAMO!</strong></button>
+     <input type="submit" value="Não, valeu"></body>
 </html>
