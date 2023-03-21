@@ -15,7 +15,7 @@ class VetorOrdenado:
             print("vetor vazio")
         else:
             for i in range(self.__ultimo + 1):
-                print(f"{i} - {self.__valores[i]}")
+                print(f"[{i}] - {self.__valores[i]}")
 
     def insere(self, valor):
         if self.__ultimo == self.__capacidade - 1:
@@ -32,24 +32,60 @@ class VetorOrdenado:
     def pesquisa(self, valor):
         for i in range(self.__ultimo + 1):
             if valor == self.__valores[i]:
-                print(f"{i}")
+                print(f"[{i}] - Encontrado")
                 return i
             else:
-                print('não encontrado')
-# asdasd
+                 print(f"[{i}] - Nao Encontrado")
+
+    def SearxBin(self, valor): # pesquisa binaria
+        min=0
+        max=self.__ultimo
+        
+        # while min <= max:
+        #     mid = ( min - max ) // 2
+        #     if valor == self.__valores[mid]:
+        #         return print(mid) 
+                    
+        #     if valor > self.__valores[mid]:
+        #         min = mid + 1
+        #         print(min)
+        #     else:
+        #         max = mid - 1
+        #         print(max)
+        # return -1
+        while True:
+            pos = int ((min+max) / 2)
+            if self.__valores[pos] == valor:
+                print ("posicao dos valores igual ao valor")
+                return pos
+            elif min > max:
+                print ("elif min > max")
+                return -1
+            else:
+                if self.__valores[pos] < valor:
+                    min = pos + 1
+                    print("Menor que o valor")
+                else: 
+                    max = pos - 1
+                    print("maior que o valor")
+
     def imprime_array(self):
         print(self.__valores[:self.__ultimo + 1])
 
-v = VetorOrdenado(6)    
+v = VetorOrdenado(12)
 v.insere(99)
-v.insere(2)
-v.insere(1)
-v.insere(0)
-v.insere(0)
-v.insere(0)
-v.insere(4)
-v.insere(4)
-v.insere(1)
+v.insere(137)
+v.insere(27)
+v.insere(55)
+v.insere(50)
+v.insere(88)
+v.insere(277)
+v.insere(33)
+v.insere(28)
+v.insere(30)
+v.insere(66)
+v.insere(44)
 v.imprime_array()
-v.pesquisa(2)
+v.SearxBin(137)
+v.pesquisa(88)
 v.imprime()

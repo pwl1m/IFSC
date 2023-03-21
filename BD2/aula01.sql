@@ -132,28 +132,49 @@ where titulo like '%rei%';
 -- @@@@@@@@@@@@@@@@
 
 -- 1 Mostrar filmes onde palavra amor ou love no titulo ou titulo original
-select titulo, titulo_original 
+select titulo, titulo original
 from filmes
-where titulo <> titulo_original
-like 'amor%';
+where (titulo like '%amor%' OR '%love%')
+or (titulo_original like '%amor%' or '%love%');
 -- ERRADA
 
 -- 2 Exibir os filmes cujo título é igual ao título original
 select titulo, titulo_original 
 from filmes
-where titulo = titulo_original
+where titulo = titulo_original;
+
+
 
 -- 3. Exibir o título e a a duração do filme mais longo.
 SELECT titulo, duracao 
 FROM filmes 
 ORDER BY duracao 
-DESC LIMIT;
+DESC LIMIT 3;
+
+--OR
+
+select titulo, duracao
+from filmes
+where (select max(duracao) from filmes);
+
+--or
+
+select titulo, duracao
+from filmes
+where duracao=(select duracao from filmes order by duracao desc limit 1);
 
 -- 4. Exibir os filmes feitos pelo diretor Christopher Nolan.
 SELECT f.titulo, d.nome_diretor
 FROM filmes f, diretores d
 WHERE f.cod_diretor=d.cod_diretor
 and d.nome_diretor='Christopher Nolan';
+
+SELECT f.titulo, d.nome_diretor
+from filmes f
+INNER JOIN diretores d
+ON f.cod_diretor=d.cod_diretor
+WHERE d.nome_diretor='Christopher Nolan';
+
 
 
 -- 5. Exibir o título e o ano de lançamento dos 3 filmes mais recentes feitos pelo ator Brad Pitt.
@@ -165,6 +186,17 @@ AND nome_ator='Brad Pitt'
 ORDER BY ano_lancamento
 DESC LIMIT 3;
 
+SELECT f.titulo, f.ano_lancamento, a.nome_ator
+FROM filmes f
+INNER JOIN elenco e
+ON f.cod_filme = e.cod_filme
+INNER JOIN atores a
+ON a.cod_ator=e.cod_ator
+WHERE a.nome_ator='Brad PItt'
+ORDER BY f.ano_lancamento DESC
+LIMIT 3;
+
+
 --6. Exibir filmes entre 60 e 80 minutos.
 SELECT titulo,duracao
 FROM filmes
@@ -173,12 +205,21 @@ BETWEEN 60 and 80;
 
 
 -- 7. Exibir os atores (sem repetição) de qualquer filme da série Harry Potter.
-SELECT DISTINCT a.nome_ator, titulo
+SELECT DISTINCT a.nome_ator
 FROM filmes f, elenco e, atores a 
 WHERE f.cod_filme= e.cod_filme 
 AND e.cod_ator = a.cod_ator
 AND f.titulo LIKE '%Harry Potter%' ORDER BY nome_ator;
 
+--OR E MAIS CORRETA
+
+SELECT DISTINCT a.nome_ator
+FROM atores a
+INNER JOIN elenco e
+ON a.cod_ator=e.cod_ator
+INNER JOIN filmes f
+ON f.cod_filme=e.cod_filme
+WHERE f.titulo LIKE '%Harry Potter%';
 
 -- 8. Exibir os registros da tabela filmes que não contenham um diretor.
 SELECT titulo,cod_diretor
@@ -187,24 +228,212 @@ WHERE cod_diretor
 IS NULL;
 
 -- 9. Exibir a lista de diretores (sem repetição) que dirigiram algum filme entre 1990 e 1995 (incluindo 1990 e 1995).
-SELECT DISTINCT f.titulo, d.nome_diretor, f.ano_lancamento
-FROM filmes f, diretores d
-WHERE f.cod_diretor = d.cod_diretor 
-AND f.ano_lancamento 
-BETWEEN 1990 and 1995;
 
--- 10. ExIbir os filmes de suspense feitos pelo ator Al Pacino.[NAO FEITO]
+SELECT DISTINCT nome_diretor
+FROM diretores
+WHERE cod_diretor IN
+(SELECT cod_diretor
+FROM filmes
+WHERE ano_lancamento 
+BETWEEN '1990' AND '1995');
+
+--OR
+
+SELECT d.nome_diretor, f.ano_lancamento
+FROM ditores d 
+INNER JOIN filmes f
+ON f.cod_diretor=d.cod_diretor
+WHERE f.ano_lancamento BETWEEN '1990' AND '1995';
+
+
+-- 10. ExIbir os filmes de suspense feitos pelo ator Al Pacino.
 SELECT f.titulo, a.nome_ator, g.nome_genero
 FROM filmeS f, generos g, atores a, elenco e
 WHERE f.cod_genero=g.cod_genero
-AND f.cod_filme=e.cod_filme
 AND e.cod_ator=a.cod_ator
+AND f.cod_filme=e.cod_filme
 AND nome_genero='Suspense'
 AND nome_ator='Al Pacino';
+
+-- OR
+
+SELECT f.titulo, a.nome_ator, g.nome_genero
+FROM filmes f
+INNER JOIN elenco e
+ON f.cod_filme=e.cod_filme
+INNER JOIN atores a
+ON a.cod_ator=e.cod_ator
+INNER JOIN generos g
+ON f.cod_genero=g.cod_genero
+WHERE a.nome_ator='Al Pacino'
+AND g.nome_genero='Suspense';
+
+
 -- @@@@@@@@@@@@@
 -- @FIM LISTA 1@
 -- @@@@@@@@@@@@@
--- ######################
+
 -- @@@@@@@@
 -- @AULA 2@
 -- @@@@@@@@
+
+-- qual o comando SQL que exibe todos os filmes/series/shows de 2006 e seus respectivos diretores?
+-- o filme e os respectivos diretores
+SELECT f.titulo, d.nome_diretor, f.ano_lancamento
+FROM filmes f 
+INNER JOIN diretores d
+ON f.cod_diretor = d.cod_diretor
+WHERE f.ano_lancamento = 2006;
+
+-- e que ele ta trazendo o filme que tem diretor mas tambem o filme que nao tem diretor
+SELECT titulo, ano_lancamento, nome_diretor
+FROM filmes f 
+LEFT JOIN diretores d
+ON f.cod_diretor=d.cod_diretor
+WHERE ano_lancamento=2006;
+
+-- traz os diretores que possuem filmes e tambem os diretores que nao possuem filmes caso o filme for de 2006
+SELECT titulo, ano_lancamento, nome_diretor
+FROM filmes f 
+RIGHT JOIN diretores d
+ON f.cod_diretor=d.cod_diretor
+WHERE ano_lancamento=2006;
+
+-- qual o comando sql que exibe todos os filmes/series/shows que não possuem diretores?
+-- MAIS DIFICIL
+SELECT IFNULL (f.titulo, '--!@#$%&--') 
+as filmes, d.nome_diretor
+FROM filmes f
+RIGHT JOIN diretores d
+ON f.cod_diretor=d.cod_diretor;
+
+-- MAIS FACIL
+select (TITULO, cod_diretor)
+FROM filmes f 
+WHERE cod_diretor IS NULL;
+
+-- qual o comando sql que exibe todos os diretores que nao possuem nenhum filme?
+SELECT nome_diretor
+FROM filmes f 
+RIGHT JOIN diretores d 
+ON f.cod_diretor=d.cod_diretor
+WHERE f.cod_filme IS NULL;
+
+SELECT nome_diretor
+FROM filmes f 
+LEFT JOIN diretores d 
+ON f.cod_diretor=d.cod_diretor
+WHERE f.cod_filme IS NULL;
+
+-- encontrar filmes do respectivo ator 
+SELECT f.titulo
+FROM filmes f
+INNER JOIN elenco e
+ON f.cod_filme=e.cod_filme
+INNER JOIN atores a
+ON e.cod_ator=a.cod_ator
+WHERE a.nome_ator='Orlando Bloom'
+AND f.titulo
+IN
+(SELECT f.titulo
+FROM filmes f
+INNER JOIN elenco e
+ON f.cod_filme=e.cod_filme
+INNER JOIN atores a
+ON e.cod_ator=a.cod_ator
+WHERE a.nome_ator='Johnny Depp');
+
+-- fim aula 2
+
+-- inicio lista 2
+
+-- 1. Listar o título dos filmes e seu respectivo gênero, incluindo na lista os gêneros que não
+-- possuem filmes.
+
+SELECT titulo, nome_genero
+FROM filmes f 
+RIGHT JOIN generos g
+ON f.cod_genero=g.cod_genero;
+
+-- 2. Listar o nome dos atores que atuam nos 5 filmes de maior duração (Dica: usar relações
+-- derivadas, order e limit)
+--  PRIMEIRA ETAPA
+(SELECT titulo, duracao 
+FROM filmes
+ORDER BY duracao DESC LIMIT 5) AS grandoes
+
+SELECT DISTINCT a.nome_ator
+FROM atores a
+INNER JOIN elenco e
+ON a.cod_ator=e.cod_ator
+INNER JOIN (SELECT cod_filme -- tabela virtual
+FROM filmes
+ORDER BY duracao
+DESC LIMIT 5) f -- é a tabela
+ON f.cod_filme = e.cod_filme
+ORDER BY a.nome_ator;
+
+-- 3. Listar o nome dos atores, em ordem alfabética, que nunca gravaram um filme.
+
+SELECT nome_ator
+FROM atores
+WHERE cod_ator NOT IN (SELECT cod_ator FROM elenco)
+ORDER BY nome_ator; 
+
+-- 4. Listar o título em português dos filmes que sejam dos seguintes gêneros: Infantil,
+-- Aventura ou Show (usar consultas aninhadas e a cláusula IN).
+
+SELECT titulo
+FROM filmes
+WHERE cod_genero IN( SELECT cod_genero FROM generos WHERE 
+nome_genero = 'Infantil' OR
+nome_genero = 'Aventura' OR
+nome_genero = 'Show');
+
+-- 5. Listar o título em português dos filmes dos gêneros: Ação, Infantil e Comédia, lançados
+-- após 2005 (usar junção interna e a cláusula IN).
+
+SELECT titulo
+FROM filmes
+WHERE ano_lancamento> 2005 AND cod_genero IN (
+    SELECT cod_genero FROM generos WHERE nome_genero IN ('Ação', 'Infantil', 'Comédia')
+);
+
+--OR
+-- primeira etapa
+SELECT f.titulo, g.nome_genero
+FROM filmes f INNER JOIN generos g
+ON g.cod_genero=f.cod_genero;
+
+-- segunda etapa
+(SELECT cod_genero, nome_genero FROM generos WHERE nome_genero IN ('Ação', 'Infantil', 'Comédia')
+) AS g
+
+--juntando as etapas
+SELECT f.titulo, g.nome_genero
+FROM filmes f INNER JOIN (SELECT cod_genero, nome_genero FROM generos WHERE nome_genero IN ('Ação', 'Infantil', 'Comédia')
+) AS g
+ON g.cod_genero=f.cod_genero
+WHERE ano_lancamento > 2005;
+
+-- 6. Quais diretores não fizeram nenhum filme? Faça este comando SQL sem utilizar a palavra
+-- NULL em todo código.
+
+SELECT nome_diretor
+FROM diretores
+WHERE cod_diretor NOT IN (SELECT d.cod_diretor FROM diretores d INNER JOIN filmes f
+ON d.cod_diretor=f.cod_diretor);
+
+-- 7. Exibir a lista de filmes que não possui nenhum ator (elenco).
+
+SELECT titulo, e.cod_ator
+FROM filmes f LEFT JOIN elenco e
+ON f.cod_filme = e.cod_filme
+WHERE e.cod_filme IS NULL;
+
+-- OR
+SELECT titulo 
+FROM filmes
+WHERE cod_filme NOT IN (
+    SELECT cod_filme FROM elenco
+);
