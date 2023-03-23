@@ -48,8 +48,8 @@ p{
 
 @media print{
 *{
-        background-color:white !important;
-        color:black !important;
+    background-color:white !important;
+    color:black !important;
 }
 
 nav{

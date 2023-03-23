@@ -1,13 +1,13 @@
   html,body{
   margin:0px;
   padding: 0px;
-  
 }
-/* PRIMEIRA PAGINA */
+/* INDEX */
 body{
   background-color: #000000 ;
-  color:#000000;
   font-family: 'Montserrat', sans-serif;
+  color: aliceblue;
+  text-align: center; 
 }
 
 .navigation{
@@ -64,12 +64,13 @@ body{
 }
 
 .profile-pic{
-/*background-color: yellow;*/
-width: 40%; /* Opção para caso use cores diferentes para cada bloco e transformar o site responsivo a sempre trabalhar com essa proporção*/
-text-align: center;
+/* background-color: yellow; */
+ /* Opção para caso use cores diferentes para cada bloco e transformar o site responsivo a sempre trabalhar com essa proporção*/
+box-sizing: border-box;
 animation-name: profile-capa;
 animation-duration: 1.5s;
-vertical-align: top;
+vertical-align: center;
+margin-right: 25px;
 }
 
 .profile-pic img{
@@ -78,148 +79,27 @@ vertical-align: top;
   margin-top: 100px;
   animation-name: profile-capa;
   animation-duration: 1.5s;
+  align-items: center;
 }
 
-.profile-title{
-  /*background-color: red;*/
-  vertical-align: top;
-  width: 59%; /* Opção para caso use cores diferentes para cada bloco e transformar o site responsivo a sempre trabalhar com essa proporção*/
+ .profile-title{
+  /* background-color: red; */
+  vertical-align: top; /* Opção para caso use cores diferentes para cada bloco e transformar o site responsivo a sempre trabalhar com essa proporção*/
   animation-name: title-capa;
   animation-duration: 1.5s;
-}
+} 
 
-.profile-title h1{
+.profile-title h1{ /* Titulo de Nome e Exercicio do Professor*/
 line-height: 30px; /* diminuir espacamento */
 font-size: 50px;
 text-shadow: cyan -2px 0, red 2px 0;
 margin-top: 220px;
 color:#ffffff
-}
-
-.profile-title h2{
-  font-size: 20px;
-}
-
-/* PORTFOLIO */
-#f1{
-  float: right;
-}
-
-.main {
-padding-right: 50px;
-padding-bottom: 80px;
-padding-left: 100px;
-animation-name: tela;
-animation-duration: 1s;
-box-sizing: border-box;
- margin: justify;
-}
-
-.main img{
-float: right;
-width: 250px;
-margin-right: 20px;
-}
-
-.main h1{
-   color: #ffffff;
-   font-weight: normal;
-  }
-
-.main h2{
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: normal;
-  text-transform: uppercase;
-  margin-top: 50px;
-  }
-
-.main h3{
-  color: #FA9F42;
-  font-size: 12px;
-  text-transform: uppercase;
-  }
-
-.main p{
-  color:#ffffff;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 28px;
-  text-align: justify;
-}
-
-.inf{
-margin-top: 30px;
-font-size: 20px;
-margin-left: 50px;
-color: #ffffff;
-}
-
-#inf{
-  font-size: 20px;
-  line-height: 12px;
+text-align: center;
 }
 
 #social-img {
-  width: 50px;
-}
-
-/*PORTFOLIO*/
-
-.miniatura{
-  width: 320px;
-  height: 320px;
-  /*background-image: url("../img/ccb.jpg"); ../ faz ele voltar uma pasta pois o css esta em outra pasta*/
-  display: inline-block;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  background-size: contain; /*pra fazer a imagem caber no tamanho do CSS*/
-  overflow: hidden;
-}
-
-.blackbox{
-width: 100%;
-height: 100%;
-background-color: #000000;
-opacity: 0;
-padding-top: 120px;
-}
-
-.miniatura a{
-  text-decoration: none; /*tirar sublinhado de links*/
-}
-
-.blackbox:hover{
-  opacity: 0.75
-}
-
-.blackbox-title{
-  text-align: center;
-}
-
-.blackbox h1{
-font-size: 1rem;
-color:#FA9F42;
-text-transform: uppercase; /*letras maiusculas*/
-margin-top: 0;
-}
-
-.blackbox h2{
-  text-transform: none;
-  margin-top: 0;
-}
-/*Divs dos Trabalhos*/
-.maint {
-  padding-top: 0px;
-  padding-right: 100px;
-  padding-bottom: 80px;
-  padding-left: 100px;
-}
-
-.maint img{
-width: 100%;
-margin-bottom: 1rem ;
-margin-top: 2rem ;
+  width: 80px;
 }
 
 @keyframes profile-capa {
