@@ -1,0 +1,14 @@
+nav{
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+}
+
+.container{
+    margin-bottom: 150px;
+    min-height: 100vh; /**/
+}
+
+/* para impressoras */
+
