@@ -77,12 +77,7 @@ class Pilha:
             return
         print(f'valor no topo {self.__valores[self.__topo]}')
         return self.__valores[self.__topo]
-# expressao do professor
-    def validaexp(exp)
-    exp=str(input('digite a expressao '))
-    pilha=Pilha(len(exp))
-    for i in range (len(exp))
-    ch=exp[i]
+
 
 v=Pilha(5)
 v.empilhar(1)

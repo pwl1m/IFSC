@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        div{
+            box-sizing: border-box;
+        }
+
+        .container{
+            max-width: 1024px;
+            /* altura */
+            height: 55vh;
+            margin: auto;
+            /* podendo usar no portfolio e alinha no meio */
+            justify-content: end;
+            align-items: end;
+            font-family: 'Segoe UI';
+            border:1px solid black;
+            /* flexbox */
+            display: flex;
+            /* inicio ao contrario */
+            flex-direction: column;
+            /* arrumando automaticamente */
+            flex-wrap: wrap;
+            /* orgalinha linhas; */
+            align-content: space-between;
+            /*  */
+            
+        }
+        .container div{
+            background-color: yellowgreen;
+            padding: 20px;
+            margin: 10px;
+            display: flex;
+            /* virar coluna horizontal */
+            flex-direction: column;
+            flex-grow: 1; 
+        }
+        .container:first-child{
+            flex-basis:50%;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>A</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit!</div>
+        <div>B</div>
+    </div>
+</body>
+</html>
