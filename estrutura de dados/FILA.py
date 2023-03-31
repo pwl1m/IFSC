@@ -16,24 +16,24 @@ class filacircular:
 
     def entrafila(self, unidade):
         if self.filacheia():
-            print('FILA CHEIA')
+            print('if self.filacheia()')
             return
         self.fim = (self.fim + 1) % self.capacidade
         self.valor[self.fim] = unidade
         self.n_elementos += 1
-        print(f'{unidade} ADICIONADO À FILA')
+        print(f'{unidade} unidade - entrafila')
 
     def ultfila(self):
         if self.filavazia():
-            print('FILA VAZIA')
+            print('fila vazia FROM ultfila')
             return
-        print(f'ÚLTIMO ELEMENTO ADICIONADO: {self.valor[self.fim]}')
+        print(f'ultfila - self.valor[self.fim]: {self.valor[self.fim]}')
 
     def imprimefila(self):
         if self.filavazia():
-            print('FILA VAZIA')
+            print('if self.filaVazia FROM imprimeFila')
             return
-        print('ELEMENTOS NA FILA: ')
+        print('for i in range > self.n_elementos > i+1 - self.valor [self.inicio+i] % .self.capacidade')
         for i in range(self.n_elementos):
             print(f'{i+1}. {self.valor[(self.inicio+i) % self.capacidade]}')
 
