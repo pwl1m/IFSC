@@ -11,7 +11,7 @@ pilha_de_livros.append ('livro 3')
 
 
 #usando o for
-for livro in pilha_de_livros[::-1]: #inverte a ordem da pilha
+for livro in pilha_de_livros[::1]: #inverte a ordem da pilha
     print(livro)
 
 
@@ -21,7 +21,7 @@ livro=pilha_de_livros.pop() # 3
 #imprimindo
 print('livro que retirei: ', livro)
 print('livros restantes: ', pilha_de_livros)
-
+print(pilha_de_livros.pop(0))
 # outro exemplo
 pilha_de_pratos: List[int] = []
 
@@ -31,5 +31,5 @@ pilha_de_pratos.append (1)
 
 recolheprato=pilha_de_pratos.pop()
 
-print('prato recolido: ', recolheprato)
+print('\nprato recolido: ', recolheprato)
 print('prato na mesa: ', pilha_de_pratos)

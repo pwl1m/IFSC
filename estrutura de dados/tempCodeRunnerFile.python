@@ -1,35 +1,38 @@
-# type annotation
-from typing import List
+import numpy as np
 
-# pilha de livros com type annotation
-pilha_de_livros: List[str] = []  # 1
+class fila:
+    def __init__(self, capacidade):
+        self.capacidade = capacidade
+        self.inicio = 0
+        self.fim = -1
+        self.valor = np.empty(self.capacidade, dtype=int)
+        self.maxfila = 10
 
-#adicionado livros no topo da pilha
-pilha_de_livros.append ('livro 1') # 2
-pilha_de_livros.append ('livro 2')
-pilha_de_livros.append ('livro 3')
+    def filacheia(self):
+        return self.fim == self.capacidade-1
 
+    def filavazia(self):
+        return self.fim == -1
 
-#usando o for
-for livro in pilha_de_livros[::-1]:
-    print(livro)
+    def entrafila (self,unidade):
+        if self.filacheia():
+            print('FILA CHEIA')
+            return
+        self.fim += 1
+        self.valor[self.fim] = unidade
+        print('VALOR ADICIONADO')
 
+   # def saidafila (self):
+    def ultfila(self):
+        if self.filavazia():
+            print('VAZIA')
+            return
+        print(f'PRIMEIRO DA FILA {self.valor[0]}')
+        return self.valor[self.fim]
 
-#obtendo o elemento mais novo
-livro=pilha_de_livros.pop() # 3
-
-#imprimindo
-print('livro que retirei: ', livro)
-print('livros restantes: ', pilha_de_livros)
-
-# outro exemplo
-pilha_de_pratos: List[int] = []
-
-pilha_de_pratos.append (5)
-pilha_de_pratos.append (4)
-pilha_de_pratos.append (1)
-
-recolheprato=pilha_de_pratos.pop()
-
-print('prato recolido: ', recolheprato)
-print('prato na mesa: ', pilha_de_pratos)
+x=fila(4)
+x.entrafila(1)
+x.entrafila(1)
+x.entrafila(1)
+x.entrafila(100)
+x.ultfila()
