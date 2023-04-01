@@ -15,7 +15,7 @@ body{
 .navigation{
   background-color: #37718e ;
   height: 50px ;
-  background: linear-gradient(135deg,#05b8cf,#530d96);
+  background: linear-gradient(135deg,#530d96,#05b8cf);
 }
 
 .navigation ul{
