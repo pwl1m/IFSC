@@ -81,7 +81,7 @@ height: 300px;
 display: inline-block;
 margin-right: 30px;
 margin-bottom: 15px;
-background-size:100%; /*pra fazer a imagem caber no tamanho do CSS*/
+background-size: 100%; /*pra fazer a imagem caber no tamanho do CSS*/
 overflow: hidden;
 }
 

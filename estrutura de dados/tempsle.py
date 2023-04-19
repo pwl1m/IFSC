@@ -3,6 +3,12 @@ class Aluno:
         self.nome = nome
         self.nota1 = nota1
         self.nota2 = nota2
+    
+# Crie as seguintes funcoes (m´etodos):
+# Calcula media, retornando a media aritmetica entre as notas;
+# Mostra dados, que somente imprime o valor de todos os atributos;
+# Resultado, que verifica se o aluno esta aprovado ou reprovado (se a
+# media for maior ou igual a 6.0, o aluno esta aprovado)
 
     def calcular_media(self):
         return (self.nota1 + self.nota2) / 2
@@ -18,17 +24,3 @@ class Aluno:
             print("Aluno aprovado!")
         else:
             print("Aluno reprovado.")
-
-# criando dois objetos Aluno
-aluno1 = Aluno("João", 7.5, 8.0)
-aluno2 = Aluno("Maria", 5.0, 6.0)
-
-# testando as funções para aluno1
-aluno1.mostrar_dados()
-print("Média:", aluno1.calcular_media())
-aluno1.resultado()
-
-# testando as funções para aluno2
-aluno2.mostrar_dados()
-print("Média:", aluno2.calcular_media())
-aluno2.resultado()
