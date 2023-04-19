@@ -17,7 +17,7 @@ print("------------------")
 for a in range(0, 10):
   print(a)
 
-#4
+#4 leia duas strings e verifique se são iguais
 nome1 = 'ana'
 nome2 = 'ana'
 
@@ -34,24 +34,25 @@ if nome3 is nome4:
 else:
     print('diferentes')
 
-#5
+#5 calcule fatorial de um numero
 n = int(input("n fatorial= "))
 for i in range(1, n):
   resultado = (i*n)
   n = resultado
 print (resultado)
 
-#6
+#6 leia uma lista de numeros e imprima o maior numero da lista
 listam = [10, 20, 4, 45, 99, 22] 
 print("maior", max(listam)) 
 
 # 7
-# n = int(input("n primo= "))
-# divisor = 2
-# while n % divisor != 0:
-#   divisor += 1
-#   print(divisor)
-#   if divisor == n:
+num = int(input("n primo= "))
+divisor = 2
+while num % divisor != 0:
+  divisor += 1
+  print(divisor)
+  if divisor == num:
+    print("nao primo")
 
 #8
 soma = 0
@@ -79,30 +80,4 @@ b=set(lista)
 c=list(b)
 print(c)
 
-#14 criar uma classe chamada aluno com os atributos: nome, nota1, nota2. Crie um construtor para a classe
-class Aluno:
-    def __init__(self, nome, nota1, nota2):
-        self.nome = nome
-        self.nota1 = nota1
-        self.nota2 = nota2
-    
-# Crie as seguintes funcoes (m´etodos):
-# Calcula media, retornando a media aritmetica entre as notas;
-# Mostra dados, que somente imprime o valor de todos os atributos;
-# Resultado, que verifica se o aluno esta aprovado ou reprovado (se a
-# media for maior ou igual a 6.0, o aluno esta aprovado)
-
-    def calcular_media(self):
-        return (self.nota1 + self.nota2) / 2
-    
-    def mostrar_dados(self):
-        print(f"Nome: {self.nome}")
-        print(f"Nota 1: {self.nota1}")
-        print(f"Nota 2: {self.nota2}")
-    
-    def resultado(self):
-        media = self.calcular_media()
-        if media >= 6.0:
-            print("Aluno aprovado!")
-        else:
-            print("Aluno reprovado.")
+#12
