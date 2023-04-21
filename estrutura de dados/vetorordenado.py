@@ -15,11 +15,12 @@ class VetorOrdenado:
             print("vetor vazio")
         else:
             for i in range(self.__ultimo + 1):
-                print(f"[{i}] - {self.__valores[i]}")
+                print(f"[{i}] - {self.__valores[i]} |", end=" ")
 
     def insere(self, valor):
+        # verificar se o vetor esta cheio
         if self.__ultimo == self.__capacidade - 1:
-            print("capacidade maxima atingida")
+            print("capacidade maxima atingida", end=" ")
         else:
             self.__ultimo += 1
             posicao = self.__ultimo
@@ -32,27 +33,14 @@ class VetorOrdenado:
     def pesquisa(self, valor):
         for i in range(self.__ultimo + 1):
             if valor == self.__valores[i]:
-                print(f"[{i}] - Encontrado")
+                print(f"[{i}] - Encontrado |", end=" ")
                 return i
             else:
-                 print(f"[{i}] - Nao Encontrado")
+                 print(f"[{i}] - Nao Encontrado |", end=" ")
 
     def SearxBin(self, valor): # pesquisa binaria
         min=0
         max=self.__ultimo
-        
-        # while min <= max:
-        #     mid = ( min - max ) // 2
-        #     if valor == self.__valores[mid]:
-        #         return print(mid) 
-                    
-        #     if valor > self.__valores[mid]:
-        #         min = mid + 1
-        #         print(min)
-        #     else:
-        #         max = mid - 1
-        #         print(max)
-        # return -1
         while True:
             pos = int ((min+max) / 2)
             if self.__valores[pos] == valor:
@@ -72,6 +60,9 @@ class VetorOrdenado:
     def imprime_array(self):
         print(self.__valores[:self.__ultimo + 1])
 
+    def umespaco(self):
+        print("\n")
+
 v = VetorOrdenado(12)
 v.insere(99)
 v.insere(137)
@@ -88,4 +79,5 @@ v.insere(44)
 v.imprime_array()
 v.SearxBin(137)
 v.pesquisa(88)
+v.umespaco()
 v.imprime()
