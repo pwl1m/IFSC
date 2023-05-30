@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<alunos>
+    <aluno nome="Paulo" sobrenome="Silva">
+    <disciplinas>
+
+        <disciplina>Banco de Dados 2</disciplina>
+        <disciplina>Estrutura de Dados</disciplina>
+
+    </disciplinas>
+    </aluno>
+    <aluno nome="Humnerto" sobrenome="Filfa">
+    <disciplinas>
+
+        <disciplina>Linguagem</disciplina>
+        <disciplina>Interpretação de Codigos</disciplina>
+
+    </disciplinas>
+    </aluno>
+</alunos>
