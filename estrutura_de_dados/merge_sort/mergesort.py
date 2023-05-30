@@ -38,5 +38,7 @@ def merge(lista, inicio, meio, fim):
         # se nao entra na posicao k da lista quem ta no topo da lista da direita(o maior numero)
         if left[i] < right [j]:
             lista[k] = left [i]
+            i+=1
         else:
             lista[k] = right[j]
+            j+=1

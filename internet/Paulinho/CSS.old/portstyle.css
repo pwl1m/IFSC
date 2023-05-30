@@ -1,0 +1,121 @@
+html,body{
+    margin:0px;
+    padding: 0px;
+}
+
+body{
+  background: linear-gradient(10deg,#000000,#6e7d88);
+  font-family: 'Montserrat', sans-serif;
+  color: aliceblue;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.navigation{
+  background-color: #37718e ;
+  height: 50px ;
+  background: linear-gradient(135deg,#530d96,#05b8cf);
+}
+
+.navigation ul{
+  margin-top: 0px;
+ list-style: none; /* tirar as bolinhas do 'ul' */
+ text-align: center; 
+ list-style-type: none;
+ justify-content: center;
+}
+
+.navigation a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navigation a:hover{
+  color:#000000
+}
+
+.navigation li{
+  display: inline-block; /* criar os blocos */
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+}
+
+.navigation li.threeline-icon{
+    display: none;
+}
+
+.navigation li.threeline-icon:hover {
+   color: #f27609;
+   cursor: pointer;
+}
+
+.main {
+  animation-name: tela;
+  animation-duration: 1s;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+  /* onde ta escrito portifolio */
+.main h1{ 
+  color: #ffffff;
+   font-weight: normal;
+   text-align: center;
+}
+  /* lettra de dentro das fotos */
+.main h2{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.miniatura{
+width: 300px;
+height: 300px;
+display: inline-block;
+margin-right: 30px;
+margin-bottom: 15px;
+background-size: 100%; /*pra fazer a imagem caber no tamanho do CSS*/
+overflow: hidden;
+}
+
+.blackbox{
+width: 100%;
+height: 100%;
+background-color: #000000;
+opacity: 0;
+}
+
+.miniatura a{
+ text-decoration: none; /*tirar sublinhado de links*/
+}
+
+.blackbox:hover{
+    opacity: 0.75;
+}
+
+.blackbox-title{
+    text-align: center;
+}
+
+.blackbox h1{
+  font-size: 25px;
+  color:#00d9ff;
+  text-transform: uppercase; /*letras maiusculas*/
+  margin-top: 0;
+}
+@media (max-width:800px){
+navigation li{
+display: none;
+}
+
+.navigation li.threeline-icon{
+  display: inline-block;  
+  text-align: right;
+}

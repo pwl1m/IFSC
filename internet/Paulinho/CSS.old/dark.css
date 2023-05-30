@@ -1,0 +1,16 @@
+body{
+    background-color: var(--fundo-dark);
+}
+
+.container{
+    background-color: var(--fundo-conteudo-dark);
+    color: var(--texto-dark);
+}
+
+nav{
+    background-color: var(--fundo-menu-dark);
+}
+
+a:any-link{
+    color:var(--link-dark);
+}
