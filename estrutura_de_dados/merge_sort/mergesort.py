@@ -41,6 +41,8 @@ def merge(lista, inicio, meio, fim):  # juntando
             lista[k] = right[j]
             j += 1
 
+    print("Passo merge:", lista[inicio:fim])
+
 lista = [7, 2, 5, 1, 8, 3]
 mergesort(lista)
 print(lista)  # Lista ordenada
