@@ -1,0 +1,61 @@
+:root{
+    --primary-color: white;
+    --white: white;
+    --black: black;
+    --gap: 3rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /*  */
+    font-size: 62.5%; 
+}
+
+header{
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+h1, h2, h3, h4, h5, h6{ /* colocando a letra para os h como montserrat */
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+
+}
+/*  */
+h1{
+    font-size: 6rem; /* colocando em 8px*/
+    text-transform: uppercase; /* colocando tudo maiusculo */
+}
+
+.main-bg{
+    background-image: url('../img/main_bg_svg.png');
+    background-size: cover;
+    background-position: center center;
+    color: var(--white);
+}
+
+.main-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+.section{
+    min-height: 100vh;
+}
+
+.white-bg{
+    background-color: var(--white);
+    color: black;
+}
