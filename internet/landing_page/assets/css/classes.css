@@ -1,0 +1,17 @@
+.main-bg{
+    background-size: cover;
+    background-position: center center;
+    background-color: white;
+}
+
+.main-content{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: var(--gap);
+    background-color: var(--cinza-claro);
+}
+
+.section{
+    min-height: 100vh;
+    /* background: greenyellow; */
+}
