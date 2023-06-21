@@ -1,5 +1,56 @@
 .intro-content{
     display: grid;
+    /* position: relative; */
+    /* aqui sao 2 colunas com info, para 3 add +1 1fr */
     grid-template-columns: 1fr 1fr;
+    /* align-items: center; */
     gap: var(--gap);
+    height: 25vh;
+}
+
+.intro-text-content, .intro-img{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+.intro-img img{
+    max-width: 100%;
+    height: auto;
+}
+
+.grid-1-content{
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 50vh;
+}
+
+.grid-1 h2{
+    position: relative;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.grid h3{
+    font-size: 3rem;
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 3rem;
+}
+
+.grid h3::before{
+    font-size: 3rem;
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 7rem;
+    font-style: italic;
+    top: -4rem ;
+    left: -2rem;
 }

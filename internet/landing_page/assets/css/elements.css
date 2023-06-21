@@ -1,11 +1,13 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html {
     /*  */
     font-size: 62.5%; 
+
 }
 /* colocando a letra para os h como montserrat */
 h1, h2, h3, h4, h5, h6{ 
@@ -16,14 +18,27 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     color: var(--primary-color);
+    line-height: 1.5;
 }
 
 h1{
     font-size: 6rem; /* colocando em 6px*/
     text-transform: uppercase; /* colocando tudo maiusculo */
 }
+
+h2{
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: var(--gap);
+    text-transform: uppercase;
+}
+
 /* estilizacao de todas as letras do site */
 a{
     text-decoration: none;
     color: var(--black);
+}
+
+p{
+    margin-bottom: var(--gap);
 }
