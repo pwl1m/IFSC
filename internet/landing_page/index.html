@@ -1,110 +1,260 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amorosa Compostagem</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="assets/css/materialize.min.css"
-      media="screen,projection"
-    />
-    <link rel="stylesheet" href="assets/css/menu.css" />
-    <link rel="stylesheet" href="assets/css/variaveis.css" />
-    <link rel="stylesheet" href="assets/css/elements.css" />
-    <link rel="stylesheet" href="assets/css/classes.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
 
-  <body #id="main" class="main-bg">
+<body class="main-bg">
+
+    <input id="close-menu" class="close-menu" type="checkbox" role="button" aria-label="Close menu">
+    <label class="close-menu-label" for="close-menu" title="close menu"></label>
     <aside class="menu white-bg">
-      <div class="main-content menu-content">
-        <h1>
-          <a href="#">AMOROSA</a>
-        </h1>
-        <nav>
-          <ul>
-            <li><a href="#intro">Hey!</a></li>
-            <li><a href="#oqfazemos">Olá</a></li>
-            <li><a href="#grid-1">Processo</a></li>
-            <li><a href="#">serviços</a></li>
-            <li><a href="#">contato</a></li>
-          </ul>
-        </nav>
-      </div>
+        <div class="main-content menu-content">
+            <h1>
+                <a href="#">LOGO</a>
+            </h1>
+
+            <nav>
+                <ul onclick="getElementById('close-menu').checked=false;">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#grid-one">For 2022</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#table">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </aside>
 
     <div class="menu-spacing"></div>
 
-    <section id="intro" class="intro main-bg section">
-      <div class="main-content intro-content">
-        <div class="intro-text-content">
-          <h2>Compostagem no Rosa</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            natus tempore voluptates, ipsum quibusdam doloribus ea quod
-            molestiae
-          </p>
-        </div>
+    <section id="home" class="intro main-bg section" >
+        <div class="main-content intro-content">
+            <div class="intro-text-content">
+                <h2>State of CSS 2022</h2>
+                <p>The year 2022 is set to be one of CSS's greatest years, 
+                in both features and cooperative browser feature releases, 
+                with a collaborative goal to implement 14 features!</p>
+            </div>
         <div class="intro-img">
-          <img src="assets/img/coleta.png" alt="exemplo" />
-          <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis natus tempore voluptates, ipsum quibusdam doloribus ea quod molestiae</p> -->
+            <img src="assets/img/button-style.svg" alt="Duas pessoas escolhendo um estilo para um botão.">
         </div>
-      </div>
+        </div>
     </section>
 
-    <section id="oqfazemos" class="oqfazemos-content">
-      <div class="intro-text-content">
-        <h2>O QUE FAZEMOS</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam
-          nostrum sunt recusandae molestiae, architecto ipsum esse vel quos
-          eligendi ducimus repellat eius obcaecati reiciendis, laboriosam
-          dolores ipsa omnis rerum?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam
-          nostrum sunt recusandae molestiae, architecto ipsum esse vel quos
-          eligendi ducimus repellat eius obcaecati reiciendis, laboriosam
-          dolores ipsa omnis rerum?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam
-          nostrum sunt recusandae molestiae, architecto ipsum esse vel quos
-          eligendi ducimus repellat eius obcaecati reiciendis, laboriosam
-          dolores ipsa omnis rerum?
-        </p>
-      </div>
+    <section id="overview" class="white-bg section" >
+        <div class="main-content overview-content">
+            <h2>Overview</h2>
+            <p>This post is the article form of the talk given at Google IO 2022. 
+            It's not meant to be an in-depth guide on each feature, 
+            rather an introduction and brief overview to pique your interest, 
+            providing breadth instead of depth.</p>
+        </div>
     </section>
 
-    <section id="grid-1" class="grid-1-content main-bg section">
-      <div class="main-content grid-1-content">
-        <h2>Como funciona</h2>
-        <!-- <p>uma descrição?</p> -->
-        <div class="grid">
-        <article>
-            <h3>Descarte</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animicommodi quis nisi eum ipsum saepe est, quia voluptatibus possimusnemo nihil cumque, maiores consequuntur sunt velit dolor explicabo?Laboriosam, nam?</p>
-        </article>
-        <article>
-        <h3>Coleta</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animicommodi quis nisi eum ipsum saepe est, quia voluptatibus possimus nemo nihil cumque, maiores consequuntur sunt velit dolor explicabo?Laboriosam, nam?</p>
-        </article>
-    <article>
-        <h3>Compostagem</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Animicommodi quis nisi eum ipsum saepe est, quia voluptatibus possimusnemo nihil cumque, maiores consequuntur sunt velit do explicabo?Laboriosam, nam?</p>
+    <section id="grid-one" class="main-content grid-one main-bg section">
+        <div class="grid-one-content">
+            <h2 class="grid-main-heading">Fresh for 2022</h2>
+            <p class="grid-description">Unsurprisingly, the state of CSS 2022 is dramatically impacted by the Interop 2022 work.</p>
+            <div class="grid">
+                <article>
+                    <h3>Cascade</h3>
+                <p>Before cascade @layer, the discovered order of loaded 
+                stylesheets was  very important, as styles loaded last 
+                can overwrite previously loaded styles. 
+                This led to meticulously managed entry stylesheets, 
+                where developers needed to load less 
+                important styles first and more important styles later. </p>
+                </article>
+                <article>
+                    <h3>Subgrid</h3>
+                <p>Before @subgrid, a grid inside of another grid couldn't align 
+                    itself to its parent cells or grid lines. Each grid layout 
+                    was unique. Many designers place a single grid over their 
+                    whole design and constantly align items within it, which 
+                    couldn't be done in CSS.</p>
+                </article>
+                <article>
+                    <h3>Container</h3>
+                <p>Before @container, elements of a webpage could only respond 
+                    to the size of the whole viewport. This is great for macro 
+                    layouts, but for micro layouts, where their outer container 
+                    isn't the whole viewport, it's impossible for the layout to 
+                    adjust accordingly.</p>
                 </article>
             </div>
         </div>
     </section>
+
+    <section id="gallery" class="grid-one white-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading">Gallery</h2>
+            <p class="grid-description">Some random images.</p>
+
+            <div class="grid">
+                <div class="gallery-img">
+                    <img src="https://source.unsplash.com/random/360x360?r=1" alt="imagem 1 de tamanho 360x360, gerada aleatoriamente.">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://source.unsplash.com/random/360x360?r=2" alt="imagem 2 de tamanho 360x360, gerada aleatoriamente.">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://source.unsplash.com/random/360x360?r=3" alt="imagem 3 de tamanho 360x360, gerada aleatoriamente.">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://source.unsplash.com/random/360x360?r=4" alt="imagem 4 de tamanho 360x360, gerada aleatoriamente.">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://source.unsplash.com/random/360x360?r=5" alt="imagem 5 de tamanho 360x360, gerada aleatoriamente.">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://source.unsplash.com/random/360x360?r=6" alt="imagem 6 de tamanho 360x360, gerada aleatoriamente.">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="grid-two" class="main-content grid-one main-bg section">
+        <div class="grid-one-content">
+            <h2 class="grid-main-heading">Extra</h2>
+            <p class="grid-description">The texts below are for example only.</p>
+            <div class="grid">
+                <article>
+                    <h3>Compatibility </h3>
+                <p>A primary reason so many CSS features are set to cooperatively
+                    release is due to the efforts of Interop 2022. Before studying
+                    the Interop efforts, it's important to look at Compat 2021’s
+                    efforts.</p>
+                </article>
+                <article>
+                    <h3>Compat 2021</h3>
+                <p>The goals for 2021, driven by developer feedback via surveys,
+                     were to stabilize current features, improve the test suite 
+                     and increase passing scores of browsers for five features</p>
+                </article>
+                <article>
+                    <h3>Interop 2022</h3>
+                <p>This year, browsers met together to discuss the features and 
+                    priorities they intended to work on, uniting their efforts. 
+                    They planned to deliver the following web features for developers</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <section id="table" class="white-bg section" >
+        <div class="main-content overview-content">
+            <h2>Table of contents</h2>
+            <p>This post is the article form of the talk given at Google IO 2022. 
+            It's not meant to be an in-depth guide on each feature, 
+            rather an introduction and brief overview to pique your interest, 
+            providing breadth instead of depth.</p>
+
+
+            <div class="responsive-table">
+                <table>
+                    <caption>Table contents are not complete.s</caption>
+
+                    <thead>
+                        <tr>
+                        <th>Compat 2021</th>
+                        <th>Interop 2022</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>sticky positioning</td>
+                            <td>@layer</td>
+                        </tr>
+                        <tr>
+                            <td>aspect-ratio sizing</td>
+                            <td>Color spaces </td>
+                        </tr>
+                        <tr>
+                            <td>flex layout</td>
+                            <td>Containment</td>
+                        </tr>
+                        <tr>
+                            <td>grid layout</td>
+                            <td>Form compatibility</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">And more...</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="intro main-bg section">
+        <div class="main-content intro-content">
+          <div class="intro-text-content">
+            <h2>Contact Us</h2>
+            <p>We would love to hear from you! Whether you have a question about
+                 our products, services, or just want to say hello, please don't
+                  hesitate to contact us. Our team of experts is ready to assist
+                   you in any way they can. Simply fill out the form below, and 
+                   we will get back to you as soon as possible. Thank you for 
+                   considering 
+                   us, and we look forward to hearing from you!</p>
+          </div>
+          <div class="intro-img">
+            <img src="assets/img/contact-style.svg" alt="Imagem de pessoa sentada em um banco, digitando algo em seu computador.">
+          </div>
+          <div class="contact-form">
+            <fieldset class="form-grid">
+              <legend>Contact me</legend>   
+    
+              <div class="form-group">
+                <label for="first-name">First name</label>
+                <input type="text" name="first-name" id="first-name" placeholder="Your name">
+              </div>
+    
+              <div class="form-group">
+                <label for="last-name">last name</label>
+                <input type="text" name="last-name" id="last-name" placeholder="Your last name">
+              </div>
+    
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Your e-mail">
+              </div>
+    
+              <div class="form-group full-width">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+              </div>
+    
+              <div class="form-group full-width">
+                <button type="submit">Send message</button>
+              </div>
+            </fieldset>
+          </div>  
+        </div>
+      </section>
+
+
+    <footer id="footer" class="footer white-bg">
+        <p><a rel="nofollow" target="_blank" href="https://github.com/pwl1m">Made Paulo Malheiros</p>
+		<p><a rel="nofollow" target="_blank" href="https://web.dev/state-of-css-2022/">IFSC - Landing Page</p>
+    </footer>
+    
+    <a class="back-to-top" href="#">➤</a>
 </body>
 </html>
