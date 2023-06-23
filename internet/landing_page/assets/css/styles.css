@@ -1,14 +1,12 @@
 :root {
     --primary-color: #0A1128;
-    --secondary-color: #DC143C;
     --white-color: #FFFFFF;
     --light-grey-color: #EEEEEE;
     --grey-color: #bbb7b7;
     --gap: 3rem;
 }
 
-/*/////////////////////////////////////////////////////////////////////////////
-///////////////////////////////// ELEMENTS //////////////////////////////////*/
+/*/////////ELEMENTS //////////////////*/
 
 * {
     margin: 0;
@@ -97,8 +95,7 @@ tfoot td, table th {
     background: var(--light-grey-color);
 }
 
-/*/////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////// CLASS //////////////////////////////////*/
+/*///////// CLASS //////////////////////////////////*/
 
 .main-bg {
     background-image: url('../img/main-bg.svg');
@@ -131,8 +128,7 @@ body .full-width {
     flex: 1 1 100%;
 }
 
-/*/////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////// MENU ///////////////////////////////////*/
+/*//////// MENU ///////////////////////////////////*/
 
 .menu {
     position: fixed;
@@ -190,8 +186,7 @@ body .full-width {
     left: 25%;
 }
 
-/*/////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////// STYLES /////////////////////////////////*/
+/*///////////// STYLES /////////////////////////////////*/
 
 .intro-content {
     position: relative;
@@ -237,7 +232,12 @@ body .full-width {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    min-height: 100vh;
+}
+
+.grid-one-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }
 
 .grid-main-heading {
@@ -253,6 +253,11 @@ body .full-width {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
     counter-reset: grid-counter;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
 }
 
 .grid h3 {
@@ -262,30 +267,11 @@ body .full-width {
     padding-bottom: 3rem;
 }
 
-.grid h3::before {
-    counter-increment: grid-counter;
-    content: counter(grid-counter);
-    position: absolute;
-    font-size: 7rem;
-    font-style: italic;
-    top: -4rem;
-    left: -0.3rem;
-    transform: rotate(3deg);
-}
-
 .gallery-img {
     width: 100%;
     max-width: 36rem;
     min-height: 36rem;
-    overflow: hidden;
-}
-
-.gallery-img img {
-    transition: all 300ms ease-in-out;
-}
-
-.gallery-img img:hover {
-    transform: translate(-3%, -3%) scale(1.2) rotate(5deg);
+    /* overflow: hidden; */
 }
 
 .contact-form {
