@@ -255,7 +255,7 @@ body .full-width {
     counter-reset: grid-counter;
     border: none;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
     gap: var(--gap);
 }
@@ -331,6 +331,7 @@ body .full-width {
     color: var(--primary-color);
 }
 
+
 .form-group ::placeholder {
     color: var(--grey-color);
 }
@@ -368,7 +369,8 @@ body .full-width {
     transform: rotate(-90deg);
     border: 0.1rem solid var(--primary-color);
 }
-
+/* a largura da tela for menor ou igual a 800 pixel */
+/* exibidos em uma única coluna, ocupando a largura total da tela */
 @media (max-width: 800px) {
     .intro-content, .grid {
       grid-template-columns: 1fr;
@@ -405,7 +407,8 @@ body .full-width {
     .menu {
       display: none;
     }
-  
+  /* O valor numérico especificado para a propriedade z-index indica a posição em relação a outros elementos. */
+
     .close-menu-label::after {
       content: '☰';
       position: fixed;
@@ -423,6 +426,8 @@ body .full-width {
       cursor: pointer;
     }
 
+
+/* menu retratil  */
     .close-menu:checked~.menu {
         display: block;
     }
