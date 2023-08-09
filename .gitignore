@@ -3,3 +3,5 @@ internet_2/flask/flask-env/.vscode
 internet_2/flask/flask-env/include/
 internet_2/flask/flask-env/Lib/
 internet_2/flask/flask-env/Scripts/
+.env
+pyenv.cfg
