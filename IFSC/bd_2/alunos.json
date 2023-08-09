@@ -1,9 +1,0 @@
-[{
-	"nome": "Paulo",
-	"sobrenome": "Silva",
-	"disciplinas": ["Banco de Dados 2", "Estrutura de Dados"]
-}, {
-	"nome": "Humnerto",
-	"sobrenome": "Filfa",
-	"disciplinas": ["Linguagem", "Interpretação de Codigos"]
-}]
