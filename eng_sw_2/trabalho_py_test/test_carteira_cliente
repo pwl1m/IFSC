@@ -1,0 +1,55 @@
+import pytest
+from carteira_cliente import CarteiraCliente  # Importe a classe a partir do seu código
+
+# Teste de inicialização da carteira
+def test_inicializacao_carteira():
+    carteira = CarteiraCliente("12345", 100)
+    assert carteira.numero_carteira == "12345"
+    assert carteira.saldo == 100
+
+# Teste de adição de saldo
+def test_adicionar_saldo():
+    carteira = CarteiraCliente("12345", 100)
+    carteira.adicionar_saldo(50)
+    assert carteira.saldo == 150
+
+def test_adicionar_saldo_invalido():
+    carteira = CarteiraCliente("12345", 100)
+    carteira.adicionar_saldo(-50)
+    assert carteira.saldo == 100  # O saldo não deve mudar com valor inválido
+
+# Teste de saque
+def test_sacar_saldo_suficiente():
+    carteira = CarteiraCliente("12345", 100)
+    resultado = carteira.sacar(50)
+    assert resultado == True
+    assert carteira.saldo == 50
+
+def test_sacar_saldo_insuficiente():
+    carteira = CarteiraCliente("12345", 100)
+    resultado = carteira.sacar(150)
+    assert resultado == False
+    assert carteira.saldo == 100  # O saldo não deve mudar
+
+# Teste de consulta de saldo
+def test_consultar_saldo():
+    carteira = CarteiraCliente("12345", 100)
+    saldo = carteira.consultar_saldo()
+    assert saldo == 100
+
+# Teste combinado
+def test_operacoes_combinadas():
+    carteira = CarteiraCliente("12345", 100)
+    carteira.adicionar_saldo(50)
+    resultado = carteira.sacar(75)
+    assert resultado == True
+    assert carteira.saldo == 75
+
+# Teste de limite
+def test_limites():
+    carteira = CarteiraCliente("12345", 1000000)
+    carteira.adicionar_saldo(10**12)  # Adiciona um valor enorme
+    assert carteira.saldo == 10**12
+
+if __name__ == "__main__":
+    pytest.main()
