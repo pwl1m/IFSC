@@ -1,5 +1,5 @@
 import pytest
-from carteira_cliente import CarteiraCliente  # Importe a classe a partir do seu código
+from carteira_cliente import CarteiraCliente 
 
 # Teste de inicialização da carteira
 def test_inicializacao_carteira():
