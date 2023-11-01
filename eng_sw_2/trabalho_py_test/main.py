@@ -6,13 +6,13 @@ def main():
 
     while not sair:
         if usuario is None:
-            tipo_usuario = input("Digite 'jogador' ou 'funcionario' para selecionar o tipo de usuário: ").lower()
-            if tipo_usuario == 'jogador':
-                usuario = Jogador(1, "Jogador1", "senha123")
-            elif tipo_usuario == 'funcionario':
-                usuario = Funcionario(2, "Funcionario1", "senha456")
+            tipo_usuario = input("Digite jogador ou funcionario: ").lower()
+            if tipo_usuario == 'jogador' or tipo_usuario == 'j':
+                usuario = Jogador(1, "Jogador")
+            elif tipo_usuario == 'funcionario' or tipo_usuario == 'f':
+                usuario = Funcionario(2, "Funcionario")
             else:
-                print("Tipo de usuário inválido. Digite 'jogador' ou 'funcionario'.")
+                print("Inválido. Digite 'jogador' ou 'funcionario'.")
 
         if usuario:
             print(f"Olá, {usuario.nome}!")
@@ -22,7 +22,7 @@ def main():
                 print("Saldo atual:", carteira_cliente.consultar_saldo())
 
                 valor_operacao = float(input("Digite o valor da operação: "))
-                tipo_operacao = input("Digite o tipo de operação (adicionar/sacar): ").lower()
+                tipo_operacao = input("Tipo de operação (adicionar/sacar): ").lower()
 
                 if tipo_operacao == "adicionar":
                     carteira_cliente.adicionar_saldo(valor_operacao)
@@ -35,15 +35,15 @@ def main():
 
                 print("Saldo após a operação:", carteira_cliente.consultar_saldo())
 
-            opcao = input("Digite 'sair' para sair ou 'trocar' para trocar de usuário: ").lower()
+            opcao = input("-- Qualquer tecla repete a operacao \n'trocar' para trocar de usuario \n'sair' para sair --\n").lower()
 
             if opcao == 'sair':
                 sair = True
-                print("Saindo do sistema.")
+                print("\nSaindo do sistema.")
             elif opcao == 'trocar':
                 usuario = None
             else:
-                print("Opção inválida.")
+                print("")
 
 if __name__ == "__main__":
     main()
