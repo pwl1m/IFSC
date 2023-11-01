@@ -4,10 +4,15 @@ class CarteiraCliente:
         self.saldo = saldo
 
     def adicionar_saldo(self, valor):
-        self.saldo += valor
+        if valor < 0:
+            print("Não é possível adicionar um valor negativo.")
+        else:
+            self.saldo += valor
 
     def sacar(self, valor_saque):
-        if valor_saque <= self.saldo:
+        if valor_saque < 0:
+            print ("Não é possível sacar um valor negativo.")
+        elif valor_saque <= self.saldo:
             self.saldo -= valor_saque
             return True
         else:

@@ -12,5 +12,5 @@ class Funcionario(Usuario):
 class Jogador(Usuario):
     def __init__(self, id, nome):
         super().__init__(id, nome)
-        self.carteira = CarteiraCliente("12345", 1000.0)
+        self.carteira = CarteiraCliente("12345", 100.0)
 

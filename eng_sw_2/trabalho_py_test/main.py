@@ -33,7 +33,7 @@ def main():
                 else:
                     print("Operação inválida.") # remover para teste
 
-                print("Saldo após a operação:", carteira_cliente.consultar_saldo())
+                print("Saldo após a operação:", carteira_cliente.consultar_saldo(),"\n")
 
             opcao = input("-- Qualquer tecla repete a operacao \n'trocar' para trocar de usuario \n'sair' para sair --\n").lower()
 

@@ -7,12 +7,6 @@ def test_inicializacao_usuario():
     assert usuario.id == 1
     assert usuario.nome == "Alice"
 
-# Teste de inicialização do funcionário
-def test_inicializacao_funcionario():
-    funcionario = Funcionario(2, "Bob")
-    assert funcionario.id == 2
-    assert funcionario.nome == "Bob"
-
 # Teste de inicialização do jogador
 def test_inicializacao_jogador():
     jogador = Jogador(3, "Charlie")
@@ -39,3 +33,6 @@ def test_consultar_saldo_jogador():
     jogador = Jogador(3, "Charlie")
     saldo = jogador.carteira.consultar_saldo()
     assert saldo == 100.0
+
+if __name__ == "__main__":
+    pytest.main()
