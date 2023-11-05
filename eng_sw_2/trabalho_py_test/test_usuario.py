@@ -1,5 +1,5 @@
 import pytest
-from usuario import Usuario, Funcionario, Jogador
+from usuario import Usuario, Jogador
 
 # Teste de inicialização do usuário
 def test_inicializacao_usuario():
