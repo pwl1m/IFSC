@@ -18,7 +18,8 @@ def test_adicionar_saldo(carteira):
 
 def test_adicionar_saldo_invalido(carteira):
     carteira.adicionar_saldo(-50)
-    assert carteira.saldo == 100  # O saldo não deve mudar com valor inválido
+    assert str(assert_error.value) == "Não é possível adicionar um valor negativo."
+    assert carteira.consultar_saldo() == 100
 
 # teste de valor positivo
 def test_check_number_positive(carteira):
