@@ -28,7 +28,7 @@ def test_inicializacao_jogador(player: Jogador):
 
 # Teste de adição de saldo na carteira do jogador
 def test_adicionar_saldo_jogador(player: Jogador):
-    player.carteira.adicionar_saldo(-50)
+    player.carteira.adicionar_saldo(50)
     assert player.carteira.saldo == 150.0
 
 # Teste de saque na carteira do jogador
