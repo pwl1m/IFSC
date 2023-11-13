@@ -1,5 +1,6 @@
 # main.py
 from usuario import Funcionario, Jogador
+from carteira_cliente import CarteiraCliente
 from carrinho_compras import CarrinhoDeCompras
 
 def realizar_compras(carrinho):
@@ -55,10 +56,10 @@ def main():
 
                 if opcao_comprar == 's':
                     carrinho = CarrinhoDeCompras(carteira_cliente)
-                    realizar_compras(carteira_cliente, carrinho)
+                    realizar_compras(carrinho)
                     total_compras += carrinho.total_compras
 
-            opcao = input("-- Qualquer tecla repete a operacao \n'trocar' para trocar de usuario \n'sair' para sair --\n").lower()
+            opcao = input("-- Qualquer tecla repete a operação \n'trocar' para trocar de usuário \n'sair' para sair --\n").lower()
 
             if opcao == 'sair':
                 sair = True

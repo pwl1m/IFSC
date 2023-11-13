@@ -18,11 +18,11 @@ def test_adicionar_saldo(carteira: CarteiraCliente):
     # ASSERT - VERIFICA SE O RESULTADO ESPERADO É IGUAL AO RESULTADO OBTIDO
     assert saldo_atual == saldo_anterior + 50
     
-# Teste de exceção
+#Teste_de adição de saldo inválido
 # def test_adicionar_saldo_invalido(carteira: CarteiraCliente):
-#     with pytest.raises(Exception) as assert_error:
+#     with pytest.raises(Exception, match="Não é possível adicionar um valor negativo."):
 #         carteira.adicionar_saldo(-50)
-#     assert str(assert_error.value) == "Valor inválido."
+#     assert carteira.consultar_saldo() == 100
 
 # SAQUE
 def test_sacar_saldo_suficiente(carteira: CarteiraCliente):
@@ -61,9 +61,3 @@ def test_operacoes_combinadas_saldo_insuficiente(carteira: CarteiraCliente):
 #     with pytest.raises(Exception) as assert_error:
 #         carteira.check_positive_number(-50)
 #     assert str(assert_error.value) == "Valor inválido."
-
-# #Teste_de adição de saldo inválido
-# def test_adicionar_saldo_invalido(carteira: CarteiraCliente):
-#     with pytest.raises(Exception, match="Não é possível adicionar um valor negativo."):
-#         carteira.adicionar_saldo(-50)
-#     assert carteira.consultar_saldo() == 100

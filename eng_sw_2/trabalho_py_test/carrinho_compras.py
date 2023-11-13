@@ -31,6 +31,6 @@ class CarrinhoDeCompras:
             # Atualiza o total de compras
             self.total_compras += total_compra
 
-            return saldo_atualizado 
+            return saldo_atualizado # 
     
     

@@ -5,6 +5,7 @@ from usuario import Usuario, Jogador
 # A FIXTURE É CRIADA COMO DECORATOR DO _> PYTEST.FIXTURE
 # O NOME DA FIXTURE É O NOME DO PARÂMETRO DA FUNÇÃO DE TESTE
 # PODEM SER USADA EM VÁRIOS TESTES SENDO CRIADAS EM UM ARQUIVO E BASTA IMPORTALA
+
 @pytest.fixture
 def user():
     return Usuario(1, "Alice")
