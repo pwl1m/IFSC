@@ -20,19 +20,11 @@ def test_adicionar_saldo(carteira):
     
     assert saldo_atual == saldo_anterior + 50
 
-# Teste de adição de saldo inválido
-# def test_adicionar_saldo_invalido(carteira):
-#     with pytest.raises(Exception, match="Não é possível adicionar um valor negativo."):
-#         carteira.adicionar_saldo(-50)
-#     assert carteira.consultar_saldo() == 100
-
-
-# teste de valor positivo
-# def test_check_number_positive(carteira):
-#     with pytest.raises(Exception) as assert_error:
-#         carteira.check_positive_number(-50)
-#     assert str(assert_error.value) == "Valor inválido."
-    
+#Teste_de adição de saldo inválido
+def test_adicionar_saldo_invalido(carteira):
+    with pytest.raises(Exception, match="Não é possível adicionar um valor negativo."):
+        carteira.adicionar_saldo(-50)
+    assert carteira.consultar_saldo() == 100
 # Teste de saque
 def test_sacar_saldo_suficiente(carteira):
     resultado = carteira.sacar(50)
@@ -66,6 +58,12 @@ def test_operacoes_combinadas_saldo_insuficiente(carteira):
 # def test_adicionar_saldo_invalido(carteira):
 #     with pytest.raises(Exception) as assert_error:
 #         carteira.adicionar_saldo(-50)
+#     assert str(assert_error.value) == "Valor inválido."
+
+# teste de valor positivo
+# def test_check_number_positive(carteira):
+#     with pytest.raises(Exception) as assert_error:
+#         carteira.check_positive_number(-50)
 #     assert str(assert_error.value) == "Valor inválido."
 
 if __name__ == "__main__":

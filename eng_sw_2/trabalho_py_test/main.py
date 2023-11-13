@@ -1,9 +1,9 @@
 # main.py
 from usuario import Funcionario, Jogador
-from carteira_cliente import CarteiraCliente
+# from carteira_cliente import CarteiraCliente
 from carrinho_compras import CarrinhoDeCompras
 
-def realizar_compras(carteira_cliente, carrinho):
+def realizar_compras(carrinho):
     while True:
         opcao_compra = input("Escolha uma opção de compra (mini/major/mega) ou 'sair' para sair: ").lower()
 
