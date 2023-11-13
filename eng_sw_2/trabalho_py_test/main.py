@@ -1,6 +1,5 @@
 # main.py
 from usuario import Funcionario, Jogador
-# from carteira_cliente import CarteiraCliente
 from carrinho_compras import CarrinhoDeCompras
 
 def realizar_compras(carrinho):
