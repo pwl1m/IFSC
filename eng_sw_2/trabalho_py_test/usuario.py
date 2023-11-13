@@ -13,4 +13,3 @@ class Jogador(Usuario):
     def __init__(self, id, nome):
         super().__init__(id, nome)
         self.carteira = CarteiraCliente("12345", 100.0)
-
