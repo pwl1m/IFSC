@@ -1,8 +1,6 @@
 from django.db import models
 from django.utils import timezone # para salvar a data e hora atual do contato no bd
 
-
-
 class Category (models.Model):
     class Meta:
         verbose_name = 'Category' # para mudar o nome da categoria no admin
