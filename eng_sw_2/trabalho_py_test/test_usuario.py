@@ -1,46 +1,38 @@
 import pytest
 from usuario import Usuario, Jogador
 
-# O PARÂMETRO "USUARIO" É UMA FIXTURE, QUE É UM OBJETO QUE PODE SER USADO EM VÁRIOS TESTES
-# A FIXTURE É CRIADA COMO DECORATOR DO _> PYTEST.FIXTURE
-# O NOME DA FIXTURE É O NOME DO PARÂMETRO DA FUNÇÃO DE TESTE
-# PODEM SER USADA EM VÁRIOS TESTES SENDO CRIADAS EM UM ARQUIVO E BASTA IMPORTALA
+# Teste de inicialização do usuário
+def test_inicializacao_usuario():
+    usuario = Usuario(1, "Alice")
+    assert usuario.id == 1
+    assert usuario.nome == "Alice"
 
-@pytest.fixture
-def user():
-    return Usuario(1, "Alice")
+# Teste de inicialização do jogador
+def test_inicializacao_jogador():
+    jogador = Jogador(3, "Charlie")
+    assert jogador.id == 3
+    assert jogador.nome == "Charlie"
+    assert jogador.carteira.numero_carteira == "12345"
+    assert jogador.carteira.saldo == 100.0
 
-@pytest.fixture
-def player():
-    return Jogador(3, "Charlie")
+# Teste de adição de saldo na carteira do jogador
+def test_adicionar_saldo_jogador():
+    jogador = Jogador(3, "Charlie")
+    jogador.carteira.adicionar_saldo(50)
+    assert jogador.carteira.saldo == 150.0
 
-# TESTE DE INICIALIZAÇÃO DO USUÁRIO
-def test_inicializacao_usuario(user: Usuario):
-    assert user.id == 1
-    assert user.nome == "Alice"
-
-# TESTE DE INICIALIZAÇÃO DO JOGADOR
-def test_inicializacao_jogador(player: Jogador):
-    assert player.id == 3
-    assert player.nome == "Charlie"
-    assert player.carteira.numero_carteira == "12345"
-    assert player.carteira.saldo == 100.0
-    
-# TESTE DE CONSULTA DE SALDO NA CARTEIRA DO JOGADOR
-def test_consultar_saldo_jogador(player: Jogador):
-    saldo = player.carteira.consultar_saldo()
-    assert saldo == 100.0
-
-# ADICAO DE SADO NA CARTEIRA DO JOGADOR
-def test_adicionar_saldo_jogador(player: Jogador):
-    player.carteira.adicionar_saldo(50)
-    assert player.carteira.saldo == 150.0
-
-# TESTE DE SAQUE NA CARTEIRA DO JOGADOR
-def test_sacar_saldo_jogador(player: Jogador):
-    resultado = player.carteira.sacar(50)
+# Teste de saque na carteira do jogador
+def test_sacar_saldo_jogador():
+    jogador = Jogador(3, "Charlie")
+    resultado = jogador.carteira.sacar(50)
     assert resultado == True
-    assert player.carteira.saldo == 50.0
+    assert jogador.carteira.saldo == 50.0
+
+# Teste de consulta de saldo na carteira do jogador
+def test_consultar_saldo_jogador():
+    jogador = Jogador(3, "Charlie")
+    saldo = jogador.carteira.consultar_saldo()
+    assert saldo == 100.0
 
 if __name__ == "__main__":
     pytest.main()
