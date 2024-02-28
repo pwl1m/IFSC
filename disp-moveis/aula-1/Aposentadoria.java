@@ -8,14 +8,13 @@ public class Aposentadoria{
 
     public static void main(String[] args) {
         Scanner user = new Scanner(System.in);
-        
+
         System.out.println("Nome");
         String nome = user.nextLine(); 
-        
+
         System.out.println("digite o sexo");
         String sexo = user.nextLine(); 
         // user.next().charAt(0); // o next le a palavra, o charAt pega a primeira letra
-        
         System.out.println("tempo de servico");
         int tempo = user.nextInt();  // ler entrada do usuario
 
@@ -30,8 +29,6 @@ public class Aposentadoria{
             System.out.println("pode aposentar");
         } else {
             System.out.println("nao pode aposentar");
-        }
-
-        
+        }       
     }
 }
