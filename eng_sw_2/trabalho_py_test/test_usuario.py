@@ -1,11 +1,18 @@
 import pytest
 from usuario import Usuario, Jogador
 
+<<<<<<< HEAD
 # Teste de inicialização do usuário
 def test_inicializacao_usuario():
     usuario = Usuario(1, "Alice")
     assert usuario.id == 1
     assert usuario.nome == "Alice"
+=======
+# O PARÂMETRO "USUARIO" É UMA FIXTURE, QUE É UM OBJETO QUE PODE SER USADO EM VÁRIOS TESTES
+# A FIXTURE É CRIADA COMO DECORATOR DO _> PYTEST.FIXTURE
+# O NOME DA FIXTURE É O NOME DO PARÂMETRO DA FUNÇÃO DE TESTE    
+# PODEM SER USADA EM VÁRIOS TESTES SENDO CRIADAS EM UM ARQUIVO E BASTA IMPORTALA
+>>>>>>> abf7ff4b5bdecc36195975c3c290bace620110df
 
 # Teste de inicialização do jogador
 def test_inicializacao_jogador():
