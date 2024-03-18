@@ -25,7 +25,7 @@ public class Teste1 {
         System.out.println(nome + " possui " + idade + " anos ");
 
         // entrada de dados
-        Scanner leitor = new Scanner(System.in);
+        Scanner leitor = new Scanner(System.in); // o system in é a entrada padrão do scanner, que no caso esta utilizando o teclado
         System.out.println("Digite um numero: ");
 
         int x = leitor.nextInt();

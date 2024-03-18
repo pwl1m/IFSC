@@ -1,4 +1,3 @@
-package compras;
 // pesquisar sobre staticos
 public class Produto {
     private static int contador = 0; // auto incremento
