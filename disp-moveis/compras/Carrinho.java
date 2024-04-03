@@ -15,16 +15,7 @@ public class Carrinho {
         this.produtos.add(p);
         // }
         this.quantidades.add(qnt); // caso sem for
-
-
     }
-    // primeira maneira de calcular a compra que o professor fez
-    // public double calcularCompra(){
-    //     double total = 0;
-    //     for(Produto p: this.produtos){
-    //         total += p.getValor();
-    //     }
-    //     return total;
     public void calcularCompra(){
         double total = 0;
 
