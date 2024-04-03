@@ -2,7 +2,6 @@
  *  
  */
 class Curso(val nome:String, ch:Int, val modalidade:String){
-	 
     val turno = "noturno"
     var cargaHoraria = 0
     
